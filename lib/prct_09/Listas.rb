@@ -71,4 +71,21 @@ class Lista
             return actual.value
         end
     end
+    
+    def to_s
+        aux = @tail
+        
+        if empty != true
+            puts "\n******REFERENCIAS BIBLIOGRAFICAS******"
+        end
+        while aux != nil do
+            print "#{aux.value}\n\n"
+            aux = aux.siguiente
+        end
+    end
+    
+    
+    def empty
+        return contador==0
+    end
 end
