@@ -13,20 +13,20 @@ class Bibliografias
     
     def <=>(other)
 	
-		return nil unless other.is_a?Bibliografias  #Devuelve nil si se cumple que other no es un objeto de tipo bibliografia
+        return nil unless other.is_a?Bibliografias  #Devuelve nil si se cumple que other no es un objeto de tipo bibliografia
 		
-		@autores  <=> other.autores
+        @autores  <=> other.autores
 
     end
 	
-	def ==(other)
+    def ==(other)
 		
-		if other.is_a?Bibliografias
+        if other.is_a?Bibliografias
             @titulo == other.titulo && @autores == other.autores && @publicacion == other.publicacion &&  @edicion == other.edicion
-		else
-		    false
-		end
+        else
+            false
+        end
 
-	end
+    end
     
 end
