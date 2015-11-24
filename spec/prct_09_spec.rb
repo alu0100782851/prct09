@@ -42,7 +42,34 @@ describe Bibliografias do
   
     end
     
+    describe "Lista" do
+
+      it "#Se extrae el primer elemento de la lista" do
+        @lista.insert_head(@nodo1)
+        expect(@lista.extract_head()).to eq(@nodo1.value)
+      end
     
+      it "#Se puede insertar un elemento" do
+     	    @lista.insert_head(@nodo2)
+     	    expect(@lista.head.value).to eq(@nodo2.value)
+     end
+    
+      it "#Se pueden insertar varios elementos" do
+        @lista.insert_head(@nodo3)
+        @lista.insert_tail(@nodo4)
+        @lista.insert_head(@nodo2)
+      
+        expect(@lista.extract_head()).to eq(@nodo2.value)
+        expect(@lista.extract_tail()).to eq(@nodo4.value)
+        expect(@lista.extract_head()).to eq(@nodo3.value)
+      end
+    
+      it "#Debe existir una lista con su cabeza" do
+        @lista.insert_head(@nodo2)
+        expect(@lista.head.class).to eq(Nodo)
+      end
+      
+    end
   end
     
 end
