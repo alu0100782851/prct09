@@ -69,7 +69,36 @@ describe Bibliografias do
         expect(@lista.head.class).to eq(Nodo)
       end
       
+      it "#Pruebas para utilizar el Mixin Enumerable - Funcion maximo" do
+      	expect(@lista_1.max).to eq(@libro_4) 
+      end
+    
+      it "#Pruebas para utilistazar el Mixin Enumerable - Funcion minimo" do
+      	expect(@lista_1.min).to eq(@libro_1) 
+      end   
+      
+      it "#Funcion sort: Devuelve las salida a la inversa segun la edicion" do
+        p = @lista_1.sort{|a, b| b.edicion <=> a.edicion } #Ordena de menor a mayor
+        expect(p).to eq([@libro_4,@libro_3,@libro_2,@libro_1])
+      end
+      
+      it "#Funcion include" do
+      	expect(@lista_1.include?@libro_1).to eq(true)
+      	expect(@lista_1.include?@libro_2).to eq(true)
+      	expect(@lista_1.include?@libro_3).to eq(true)
+      	expect(@lista_1.include?@libro_4).to eq(true)
+      end
+      
+      it "#Funcion each" do
+      	expect(@lista_1.each{|lista|}).to eq(@lista_1.to_s)
+      end
+      
     end
   end
+    
+    
+    
+    
+    
     
 end
