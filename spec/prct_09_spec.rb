@@ -95,6 +95,54 @@ describe Bibliografias do
       
     end
   end
+  
+  describe Revistas do  #Pruebas con la clase hija revistas
+  
+    before :each do
+      @revista = Revistas.new("Jacobson Martin","Isolation,Indentification and Synthesis of the Sex Attractant of Gypsy Moth","Oct. 14, 1960","first edition","vol. 132","n. 3433","Sciense")
+    end
+    
+    it "#El objeto pertenece a la clase" do
+      expect(@revista.class).to eq(Revistas)
+    end
+    
+    it "#El objeto pertenece a la jerarquia" do
+      expect(@revista.class.superclass).to eq(Bibliografias)
+    end
+    
+    it "#El objeto pertenece a la clase Object" do
+      @revista.is_a? Object
+    end
+    
+     it "#El objeto pertenece a la clase BasicObject" do
+      @revista.is_a? BasicObject
+    end
+    
+  end
+  
+  describe Libros do  #Pruebas con la clase hija libros
+  
+    before :each do
+      @libro = Libros.new("Richard E. Silverman","Git Pocket Guide","August 2, 2013","1","O’Reilly Media","1449325866, 978-1449325862")
+    end
+    
+    it "#El objeto pertenece a la clase" do
+      @libro.class == Libros
+    end
+    
+    it "#El objeto pertenece a la jerarquia" do
+      expect(@libro.class.superclass).to eq(Bibliografias)
+    end
+    
+     it "#El objeto pertenece a la clase Object" do
+      @libro.is_a? Object
+    end
+    
+     it "#El objeto pertenece a la clase BasicObject" do
+      @libro.is_a? BasicObject
+    end
+    
+  end
     
     
     
