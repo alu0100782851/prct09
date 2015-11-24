@@ -5,7 +5,7 @@ class Lista
     
     attr_accessor :head, :tail, :contador
     
-    #include Enumerable
+    include Enumerable
     
     def initialize
         @head = nil     #inicio de la lista
@@ -88,4 +88,14 @@ class Lista
     def empty
         return contador==0
     end
+    
+    def each
+	   actual = @tail
+	
+		while actual != nil
+		   yield actual.value
+		   actual = actual.siguiente
+		end
+    end
+    
 end
