@@ -162,7 +162,18 @@ describe Bibliografias do
       expect(@libro_4.autores[0] > @libro_2.autores[0]).to eq(true)
     end
     
-  end
+    it "#La referencia 1 es igual que la referencia 2" do
+      expect(@libro_1.autores[0] == @libro_2.autores[0]).to eq(false)
+    end
+    	
+    it "#La referencia 1 es menor igual que la referencia 2" do
+      expect(@libro_1.autores[0] <= @libro_2.autores[0]).to eq(true)
+    end
+    	
+    it "#La referencia 1 es mayor igual que la referencia 2" do
+      expect(@libro_1.autores[0] >= @libro_2.autores[0]).to eq(false)
+    end
     
+  end
     
 end
