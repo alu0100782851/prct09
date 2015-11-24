@@ -1,39 +1,86 @@
-# Prct09
+###**Lenguajes y Paradigmas de la Programación. Práctica 9**
+*Autor: Moisés Yanes Carballo*
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/prct_09`. To experiment with that code, run `bin/console` for an interactive prompt.
 
-TODO: Delete this and the text above, and describe your gem
+####**Introducción**
+En esta practica se ha llevado a cabo el desarrollo de una jerarquía de clases en ruby para representar referencias bibliográficas. Además de esto se ha desarrollado una lista doblemente enlazada en la cual cada nodo almacena una referencia.
 
-## Installation
+Por otro lado, se ha añadido el módulo comparable en la clase que representa las referencias para realizar comparaciones entre diferentes referencias bibliográficas y el módulo enumerable dentro de la clase lista para hacer pruebas con la misma.
 
-Add this line to your application's Gemfile:
+Finalmente se ha creado el fichero travis.yml y se ha relacionado nuestro repositorio github con travis para comprobar la portabilidad de los desarrollos entre distintas plataformas y versiones de Ruby.
 
-```ruby
-gem 'prct_09'
-```
+####**Documentación**
+Para llevar a cabo la practica han sido necesarios los ficheros que se especifican a continuación, así como la funcionalidad de cada uno.
 
-And then execute:
 
-    $ bundle
+1. **.gitignore** : Contiene todas las extensiones de los ficheros que no queremos se añadan a nuestro repositorio git.
 
-Or install it yourself as:
+2. **Readme.md** : Contiene una explicación detallada de la práctica. 
 
-    $ gem install prct_09
+3. **Bibliografias.rb** : Contiene el código de la clase en Ruby que permite representar referencias de una bibliografía. También contiene el modulo comparable y las funciones necesarias para poder comparar referencias.
 
-## Usage
+4. **Listas.rb** : Contiene el código de la clase en Ruby que permite trabajar con una lista doblemente enlazada, así como la struct que implementa los nodos de la lista. Ademas en ella se ha incluido el modulo enumerable.
 
-TODO: Write usage instructions here
+5. **Revistas.rb** : Clase hija de Bibliografias que representa una referencia de una revista.
 
-## Development
+6. **Libros.rb** : Clase hija de Bibliografias que representa una referencia de un libro.
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `bin/console` for an interactive prompt that will allow you to experiment.
+7. **prct_07_spec.rb** : Contiene el código con las expectativas necesarias para comprobar el correcto funcionamiento del código implementando, así como las pruebas necesarias para la comprobación de los módulos enumerable y comparable.  
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release` to create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+8. **Rakefile** : Contiene las sentencias necesarias para llevar a cabo las TDD.
 
-## Contributing
+####**Desarrollo**
+Para comenzar el desarrollo de la practica se ha partido de la gema creada en la practica anterior, por lo que no ha sido necesario volver a crearla.
 
-1. Fork it ( https://github.com/[my-github-username]/prct_09/fork )
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create a new Pull Request
+El siguiente paso ha sido comenzar con el desarrollo de las TDD, para ello dentro del fichero 'prct_09_spec.rb' hemos añadido cada una de las pruebas necesarias para poder desarrollar nuestra clase en base a dichas pruebas. 
+A continuación, con los ficheros de las clases y de la lista doblemente enlazada ya desarrollados, se han implementado las pruebas para comprobar el correcto funcionamiento de los modulos enumerable y comparable.
+
+Algunas de las pruebas realizadas para los modulos han sido las siguientes:
+> - Comprobación de que una referencia es mayor, menor o igual que otra
+> - Comprobación de que una referencia es <= ó >= que otra.
+> - Comprobación de funciones del modulo enumerable con la lista
+
+Con el fichero de las pruebas y los de las clases terminados se ha creado el fichero .travis.yml al cual hemos añadido las siguientes lineas:
+>**.travis.yml:**
+>language: ruby
+>rvm:
+>- 2.2.0
+>- 1.9.3
+>- jruby-19mode # JRuby in 1.9 mode
+>- rbx-19mode
+
+Una ves hecho esto para comprobar el correcto funcionamiento de el listado de plataformas anteriores, ha sido necesario, además de crear el fichero anterior, darnos de alta en https://travis-ci.org/.
+
+Posteriormente dento de la pagina de travis y estando ya loggeados, hemos accedido a nuestro repositorio git y lo hemos activado. Por ultimo dentro de las configuraciones que proporciona travis para nuestro repositorio hemos activado las siguientes opciones:
+	-- **Build only if .travis.yml is present**
+	-- **Build pushes**
+	-- **Build pull requests**
+	
+
+
+----
+####**Guion**
+ 1.Considere la jerarquıa de clases Ruby para representar referencias bibliograficas de practicas anteriores. 
+Modifıquela de manera que las instancias sean comparables. 
+Utilizar la metodología de desarrollo dirigido por pruebas (Test Driven Development - TDD) y la herramienta RSpec.
+
+ 2.Considere la clase Ruby para representar y gestionar listas doblemente enlazadas de practicas anteriores. 
+ Modifíquela de manera que las instancias sean enumerables. 
+ Utilizar la metodología de desarrollo dirigido por pruebas (Test Driven Development - TDD) y la herramienta RSpec.
+
+
+3.Comprobar con la herramienta Travis de Integraci´on Continua. el codigo Ruby desarrollado. Con ella se comprueba la portabilidad de los desarrollos entre distintas plataformas y versiones de Ruby.
+
+- Darse de alta en https://travis-ci.org/ y permitir que se acceda desde Github (poniendo a ON el proyecto).
+- Crear un fichero .travis.yml que contenga el listado de plataformas sobre las que se quiere comprobar el correcto funcionamiento, por ejemplo: 
+
+ language: ruby
+ rvm:
+ - 2.2.0
+ - 1.9.3
+ - jruby-19mode # JRuby in 1.9 mode
+ - rbx-19mode
+
+Para trabajar con Travis el repositorio debe estar en Github. Crear un ‘repositorio’ en Github.
+
+4.Escribir la direccion http del repositorio que se ha creado en Github en la tarea habilitada en el Campus Virtual.
