@@ -42,4 +42,33 @@ class Lista
         end
     end
     
+    def extract_head
+        aux = @head
+        @head = @head.previo
+        
+        if @head != nil             #Si head no es nil ponemos el siguiente de head como nil para desenlazar la lista
+            @head.siguiente = nil
+        else                        #Si el elemento que se extrae es el unico de la lista entonces ponemos todo a nil como en initialize
+            @tail = nil
+        end
+        
+        @contador = @contador - 1
+        return aux.value
+    end
+    
+    
+    def extract_tail
+        if @contador == 1
+            return extract_head
+        else    
+            actual = @tail
+            @tail = @tail.siguiente
+		    
+            if @tail != nil
+                @tail.previo = nil
+            end   
+            @contador = @contador - 1
+            return actual.value
+        end
+    end
 end
