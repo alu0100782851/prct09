@@ -144,9 +144,17 @@ describe Bibliografias do
     
   end
     
+  describe "#Comparación de las referencias utilistazando el Comparable" do
     
+    it "#La referencia 1 es menor que la referencia 2" do
+      expect(@libro_1.autores[0] < @libro_2.autores[0]).to eq(true)
+	  expect(@libro_3.autores[0] < @libro_1.autores[0]).to eq(false)
+      expect(@libro_3.autores[0] < @libro_4.autores[0]).to eq(true)
+      expect(@libro_4.autores[0] < @libro_1.autores[0]).to eq(false)
+      expect(@libro_4.autores[0] < @libro_2.autores[0]).to eq(false)
+    end 
     
-    
+  end
     
     
 end
