@@ -33,6 +33,7 @@ Para llevar a cabo la practica han sido necesarios los ficheros que se especific
 Para comenzar el desarrollo de la practica se ha partido de la gema creada en la practica anterior, por lo que no ha sido necesario volver a crearla.
 
 La estructura de directorios por tanto es la siguiente:
+
 ![enter image description here](https://i.gyazo.com/db33635d515f32864f90a07fe7e28bc6.png)
 
 El siguiente paso ha sido comenzar con el desarrollo de las TDD, para ello dentro del fichero 'prct_09_spec.rb' hemos añadido cada una de las pruebas necesarias para poder desarrollar nuestra clase en base a dichas pruebas. 
@@ -54,10 +55,7 @@ Con el fichero de las pruebas y los de las clases terminados se ha creado el fic
 
 Una ves hecho esto para comprobar el correcto funcionamiento de el listado de plataformas anteriores, ha sido necesario, además de crear el fichero anterior, darnos de alta en https://travis-ci.org/.
 
-Posteriormente dento de la pagina de travis y estando ya loggeados, hemos accedido a nuestro repositorio git y lo hemos activado. Por ultimo dentro de las configuraciones que proporciona travis para nuestro repositorio hemos activado las siguientes opciones:
- **Build only if .travis.yml is present**
- **Build pushes**
- **Build pull requests**
+Posteriormente dento de la pagina de travis y estando ya loggeados, hemos accedido a nuestro repositorio git y lo hemos activado. Por ultimo dentro de las configuraciones que proporciona travis para nuestro repositorio hemos activado las siguientes opciones: **Build only if .travis.yml is present**, **Build pushes** y **Build pull requests**
 	
 
 
